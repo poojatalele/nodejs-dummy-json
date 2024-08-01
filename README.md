@@ -20,14 +20,22 @@
 
 4. **Access the API**
     - Get all data: `http://localhost:3000/api/data`
-    - Filter data by name: `http://localhost:3000/api/data/filter/:name`
-    - Sort data by name: `http://localhost:3000/api/data/sort/name`
+    - Filter data by name: `http://localhost:3000/api/data/filter/name/:name`
+    - Filter data by language: `http://localhost:3000/api/data/filter/language/:language`
+    - Filter data by version: `http://localhost:3000/api/data/filter/version/:version`
+    - Sort data by name: `http://localhost:3000/api/data/sort/name/:order`
+    - Sort data by language: `http://localhost:3000/api/data/sort/language/:order`
+    - Sort data by version: `http://localhost:3000/api/data/sort/version/:order`
 
 ## API Endpoints
 
 - **GET /api/data**: Returns all data.
-- **GET /api/data/filter/:name**: Filters data by name.
-- **GET /api/data/sort/name**: Sorts data by name.
+- **GET /api/data/filter/name/:name**: Filters data by name.
+- **GET /api/data/filter/language/:language**: Filters data by language.
+- **GET /api/data/filter/version/:version**: Filters data by version.
+- **GET /api/data/sort/name/:order**: Sorts data by name.
+- **GET /api/data/sort/language/:order**: Sorts data by language.
+- **GET /api/data/sort/version/:order**: Sorts data by version.
 
 ## Example Requests
 
@@ -38,10 +46,42 @@
 
 - Filter data by name:
     ```
-    http://localhost:3000/api/data/filter/Solangi
+    http://localhost:3000/api/data/filter/name/Solangi
+    ```
+
+- Filter data by language:
+    ```
+    http://localhost:3000/api/data/filter/language/Sindhi
+    ```
+
+- Filter data by version:
+    ```
+    http://localhost:3000/api/data/filter/version/1.88
     ```
 
 - Sort data by name:
     ```
-    http://localhost:3000/api/data/sort/name
+    http://localhost:3000/api/data/sort/name/asc
     ```
+
+- Sort data by language:
+    ```
+    http://localhost:3000/api/data/sort/language/asc
+    ```
+
+- Sort data by version:
+    ```
+    http://localhost:3000/api/data/sort/version/asc
+    ```
+
+## Postman Collection
+
+You can use the provided Postman collection to test the API endpoints.
+
+1. **Download the Postman collection**:
+    [NodejsDummyJSONAPI.postman_collection.json](https://github.com/yourusername/nodejs-dummy-json/blob/main/NodejsDummyJSONAPI.postman_collection.json)
+
+2. **Import the collection into Postman**:
+    - Open Postman.
+    - Click on the `Import` button.
+    - Select the downloaded JSON file (`NodejsDummyJSONAPI.postman_collection.json`).
