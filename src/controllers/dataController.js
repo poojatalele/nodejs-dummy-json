@@ -52,6 +52,20 @@ exports.filterByVersion = (req, res) => {
     }
   };
 
+  // Controller function to filter data by id
+exports.filterById = (req, res) => {
+    try {
+      const { id } = req.params;
+      if (!id) {
+        throw new Error('ID parameter is required');
+      }
+      const data = dataService.filterById(id);
+      res.json(data);
+    } catch (error) {
+      res.status(400).json({ message: 'Invalid request', error: error.message });
+    }
+  };
+
   // Controller function to sort data by name
 exports.sortByName = (req, res) => {
     try {
@@ -88,6 +102,20 @@ exports.sortByVersion = (req, res) => {
         throw new Error('Order parameter is required');
       }
       const data = dataService.sortByVersion(order);
+      res.json(data);
+    } catch (error) {
+      res.status(500).json({ message: 'Error sorting data', error: error.message });
+    }
+  };
+
+  // Controller function to sort data by id
+exports.sortById = (req, res) => {
+    try {
+      const { order } = req.params;
+      if (!order) {
+        throw new Error('Order parameter is required');
+      }
+      const data = dataService.sortById(order);
       res.json(data);
     } catch (error) {
       res.status(500).json({ message: 'Error sorting data', error: error.message });

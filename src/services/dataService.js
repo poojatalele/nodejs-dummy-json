@@ -49,6 +49,17 @@ exports.filterByVersion = (version) => {
     return result;
 };
 
+// Function to filter by Id
+exports.filterById = (id) => {
+    const result = data.filter(item => item.id.includes(id));
+    if (result.length === 0) {
+      const error = new Error(`No data found for id: ${id}`);
+      error.status = 404;
+      throw error;
+    }
+    return result;
+  };
+
 // Function to sort by name
 exports.sortByName = (order = 'asc') => {
     return data.sort((a, b) => {
@@ -75,13 +86,26 @@ exports.sortByLanguage = (order = 'asc') => {
     });
   };
   
-  // Function to sort version
+  // Function to sort by version
 exports.sortByVersion = (order = 'asc') => {
     return data.sort((a, b) => {
       if (a.version < b.version) {
         return order === 'asc' ? -1 : 1;
       }
       if (a.version > b.version) {
+        return order === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
+  };
+
+  // Function to sort by id
+exports.sortById = (order = 'asc') => {
+    return data.sort((a, b) => {
+      if (a.id < b.id) {
+        return order === 'asc' ? -1 : 1;
+      }
+      if (a.id > b.id) {
         return order === 'asc' ? 1 : -1;
       }
       return 0;
