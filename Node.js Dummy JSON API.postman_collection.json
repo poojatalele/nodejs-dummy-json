@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "834a8722-4bf2-4932-9e21-2acdff174c41",
+		"name": "Node.js Dummy JSON API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34546275"
+	},
+	"item": [
+		{
+			"name": "Get All Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/data?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"data"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null,
+							"description": "### Get All Data\n**Method:** GET\n**URL:** `http://localhost:3000/api/data`\n**Description:** Fetches all data from the server.\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Data By Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/data/filter/:name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"data",
+						"filter",
+						":name"
+					],
+					"variable": [
+						{
+							"key": "name",
+							"value": "",
+							"description": "### Filter Data by Name\n**Method:** GET\n**URL:** `http://localhost:3000/api/data/filter/:name`\n**Description:** Filters data by name. Replace `:name` with the desired name to filter.\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sort Data By Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/data/sort/name?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"data",
+						"sort",
+						"name"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null,
+							"description": "### Sort Data by Name\n**Method:** GET\n**URL:** `http://localhost:3000/api/data/sort/name`\n**Description:** Sorts data alphabetically by name.\n"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
